@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-4nu6z5FxJ92aE/7q4LgtVW67dAJwPAF4a3sGBfTAL6qL4q+o4IB4sYGpOaKQe4e+" crossorigin="anonymous">
+    <link rel="stylesheet" href="menu.css">
+    <title>Kenny Rogers</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav class="navigation">
+          <ul>
+            <img src="kennylogo.png" alt="logo" id="background">
+            <li><a href="index.html" class="hyperlinks">Home</a></li>
+            <li><a href="Menu.html" class="hyperlinks">Menu</a></li>
+            <li><a href="aboutpage.html" class="hyperlinks">About</a></li>
+            <li><a href="index.html" class="hyperlinks">Locations</a></li>
+            <a href="devpage.html"><button id="contact">Developers</button></a>
+          </ul>
+        </nav>
+      </header>
+    <div class="sidebar">
+        <button class="sidebar-btn" onclick="changeContent('content1')">HEALTHY MEAL</button><br>
+        <button class="sidebar-btn" onclick="changeContent('content2')">SIDE DISHES</button>
+        <button class="sidebar-btn" onclick="changeContent('content3')">PASTA</button>
+        <button class="sidebar-btn" onclick="changeContent('content4')">PIZZA</button>
+        <button class="sidebar-btn" onclick="changeContent('content5')">SOLO PLATE</button>
+        <button class="sidebar-btn" onclick="changeContent('content6')">BURGERS</button>
+        <button class="sidebar-btn" onclick="changeContent('content7')">HAWAIIAN GROUP MEAL</button>
+        <button class="sidebar-btn" onclick="changeContent('content8')">SPECIALS</button>
+        <div id="cart">
+            <h1 id="carttext">Cart</h1>
+            <hr>
+            <ul id="cart-items"></ul>
+            <hr>
+            <p>Total<h2><span id="cart-total">0.00</span></h2></p>
+            <button id="clear-cart-button"style="color: white; font-size: 25px;" class="cartbuttons">Clear Cart</button>
+            <button id="popupButton" style="color: white; font-size: 25px;" class="cartbuttons">ORDER</button>
+        </div>
+    </div>
+    <div id="popup" class="popup">
+        <button id="check">&#10003;</button>
+        <button id="closeButton">&times;</button>
+        <h1 style="margin-left: 40px;">Order Placed</h1>
+        <br><br><br>
+        <p>Kindly wait for your food to arrive at your doorstep thank you.</p>
+        
+    </div>
+    <div id="mainContent" class="order-box">
+        <h1 class="h1-header1">SPECIAL</h1>
+        <div class="donut-containers">
+            <div class="promo" id="product1">
+                <img src="special1.webp" alt="1stpromo" class="image-container">
+                <p>Corn Muffin</p>
+                <p style="color:red">Php 75.00</p>
+                <button class="btn-container" onclick="addToCart('Corn Muffin', 75.00)">ORDER NOW</button>
+            </div>
+            <div class="promo" id="product2">
+                <img src="special2.webp" alt="2ndpromo" class="image-container">
+                <p>Classic Roasted Chicken</p>
+                <P style="color: red">Php 290.00</P>
+                <button class="btn-container" onclick="addToCart('Classic Roasted Chicken', 290.00)">ORDER NOW</button>
+            </div>
+            <div class="promo" id="product3">
+                <img src="special3.webp" alt="3rdpromo" class="image-container"><br>
+                <p>Honey Bourbon Ribs</p>
+                <p style="color: red">Php 400.00</p>
+                <button class="btn-container" onclick="addToCart('Honey Bourbon Ribs', 400.00)">ORDER NOW</button>
+            </div>
+        </div> 
+    </div>
+
+    <div id="content1" style="display: none;" class="order-box">
+        <div class="h1-header"><h1>HEALTHY MEAL</h1></div>
+        <div class="donut-containers">
+        <div class="promo" id="product4">
+            <img src="healthy1.jpg" alt="1stpromo" class="image-container" >
+            <p>Low Calorie Meal</p>
+            <p style="color:red">Php 130.00</p>
+            <button class="btn-container" onclick="addToCart('Low Calorie Meal', 130.00)">ORDER NOW</button>
+        </div>
+        <div class="promo" id="product5">
+            <img src="healthy2.jpg" alt="2ndpromo" class="image-container">
+            <p>High Protein Meal</p>
+            <P style="color: red">Php 140.00</P>
+            <button class="btn-container" onclick="addToCart('High Protein Meal', 140.00)">ORDER NOW</button>
+        </div>
+        <div class="promo" id="product6">
+            <img src="healthy3.jpg" alt="3rdpromo" class="image-container"><br>
+            <p>High Fiber Meal</p>
+            <p style="color: red">Php 130.00</p>
+            <button class="btn-container" onclick="addToCart('SIGNATURE ICED MOCHA', 130.00)">ORDER NOW</button>
+        </div>
+
+        </div>
+    </div>
+    <div id="content2" style="display: none;" class="order-box">
+        <div class="h1-header"><h1>SIDE DISHES</h1></div>
+        <div class="donut-containers">
+            <div class="promo" id="product7">
+                <img src="side1.webp" alt="1stpromo" class="image-container">
+                <p>Spinach Mashed Potato</p>
+                <p style="color:red">Php 90.00</p>
+                <button class="btn-container" onclick="addToCart('Spinach Smashed Potato', 90.00)">ORDER NOW</button>
+            </div>
+            <div class="promo" id="product8">
+                <img src="side2.webp" alt="2ndpromo" class="image-container">
+                <p>Fresh Fruit Salad</p>
+                <P style="color: red">Php 75.00</P>
+                <button class="btn-container" onclick="addToCart('Fresh Fruit Salad', 75.00)">ORDER NOW</button>
+            </div>
+            <div class="promo" id="product9">
+                <img src="side3.webp" alt="3rdpromo" class="image-container"><br>
+                <p>Mac and Cheese</p>
+                <p style="color: red">Php 95.00</p>
+                <button class="btn-container" onclick="addToCart('Mac and Cheese', 95.00)">ORDER NOW</button>
+            </div>
+    </div>
+
+    <div id="content3" style="display: none;" class="order-box">
+        <div class="h1-header"><h1>PASTA</h1></div>
+        <div class="donut-containers">
+            <div class="promo" id="product10">
+                <img src="pasta1.png" alt="1stpromo" class="image-container">
+                <p>Truffle Mac & Cheese Platter</p>
+                <p style="color:red">Php 190.00</p>
+                <button class="btn-container" onclick="addToCart('Truffle Mac & Cheese Platter', 190.00)">ORDER NOW</button>
+            </div>
+            <div class="promo" id="product11">
+                <img src="pasta2.webp" alt="2ndpromo" class="image-container">
+                <p>Spaghetti with Meatballs Platter</p>
+                <P style="color: red">Php 215.00</P>
+                <button class="btn-container" onclick="addToCart('Spaghetti with Meatballs Platter', 215.00)">ORDER NOW</button>
+            </div>
+            <div class="promo" id="product12">
+                <img src="pasta3.webp" alt="3rdpromo" class="image-container"><br>
+                <p>Mac and Cheese Platter</p>
+                <p style="color: red">Php 225.00</p>
+                <button class="btn-container" onclick="addToCart('Mac and Cheese Platter', 225.00)">ORDER NOW</button>
+            </div>
+
+    </div>
+    <div id="content4" style="display: none;" class="order-box">
+        <div class="h1-header"><h1>PIZZA</h1></div>
+        <div class="donut-containers">
+            <div class="promo" id="product14">
+                <img src="pizza1.jpg" alt="1stpromo" class="image-container">
+                <p>Classic Pepperoni</p>
+                <p style="color:red">Php 115.00</p>
+                <button class="btn-container" onclick="addToCart('Classic Pepperoni', 115.00)">ORDER NOW</button>
+            </div>
+            <div class="promo" id="product15">
+                <img src="pizza2.jpg" alt="2ndpromo" class="image-container">
+                <p>Cheesy Bacon Overload</p>
+                <P style="color: red">Php 125.00</P>
+                <button class="btn-container" onclick="addToCart('Cheese Bacon Overload', 125.00)">ORDER NOW</button>
+            </div>
+    </div>
+    </div>
+    <div id="content5" style="display: none;" class="order-box">
+        <div class="h1-header"><h1>SOLO PLATES</h1></div>
+        <div class="donut-containers">
+            <div class="promo" id="product16">
+                <img src="solo1.webp" alt="1stpromo" class="image-container">
+                <p>Roasted Chicken</p>
+                <p style="color:red">Php 120.00</p>
+                <button class="btn-container" onclick="addToCart('Roasted Chicken', 120.00)">ORDER NOW</button>
+            </div>
+            <div class="promo" id="product17">
+                <img src="solo2.webp" alt="2ndpromo" class="image-container">
+                <p>OMG Unfried Fried Chicken</p>
+                <P style="color: red">Php 140.00</P>
+                <button class="btn-container" onclick="addToCart('OMG Unfried Fried Chicken', 140.00)">ORDER NOW</button>
+            </div>
+            <div class="promo" id="product18">
+                <img src="solo3.webp" alt="3rdpromo" class="image-container"><br>
+                <p>Honey Bourbon Rib Plate</p>
+                <p style="color: red">Php 150.00</p>
+                <button class="btn-container" onclick="addToCart('Honey Bourbon Rib Plate', 150.00)">ORDER NOW</button>
+            </div>
+        </div>
+    </div>
+    <div id="content6" style="display: none;" class="order-box">
+        <div class="h1-header"><h1>BURGERS</h1></div>
+        <div class="donut-containers">
+            <div class="promo" id="product19">
+                <img src="burger1.png" alt="1stpromo" class="image-container">
+                <p>Hawaiian Roast Burger Ala Carte</p>
+                <p style="color:red">Php 105.00</p>
+                <button class="btn-container" onclick="addToCart('Hawaiian Roast Burger Ala Carte', 105.00)">ORDER NOW</button>
+            </div>
+            <div class="promo" id="product20">
+                <img src="burger2.png" alt="2ndpromo" class="image-container">
+                <p>Hawaiian Burger Combo</p>
+                <P style="color: red">Php 130.00</P>
+                <button class="btn-container" onclick="addToCart('Hawiian Burger Combo', 130.00)">ORDER NOW</button>
+            </div>
+    </div>
+    <div id="content7" style="display: none;" class="order-box">
+        <div class="h1-header"><h1>Hawaiian Group Meal</h1></div>
+        <div class="donut-containers">
+            <div class="promo" id="product21">
+                <img src="group1.png" alt="1stpromo" class="image-container">
+                <p>Hawaiian Roast Group<br>Meal</p>
+                <p style="color:red">Php 699.00</p>
+                <button class="btn-container" onclick="addToCart('Hawaiian Roast Group Meal', 699.00)">ORDER NOW</button>
+            </div>
+            <div class="promo" id="product22">
+                <img src="group2.png" alt="2ndpromo" class="image-container">
+                <p>Classic and Hawaiian Roast<br>Group Meal</p>
+                <P style="color: red">Php 900.00</P>
+                <button class="btn-container" onclick="addToCart('Classic and Hawaiian Roast Group Meal', 900.00)">ORDER NOW</button>
+            </div>
+            <div class="promo" id="product23">
+                <img src="group3.png" alt="3rdpromo" class="image-container"><br>
+                <p>Hawaiian Roast and OMG<br>Unfried Fried Chicken</p>
+                <p style="color: red">Php 1200.00</p>
+                <button class="btn-container" onclick="addToCart('Hawaiian Roast and OMG Unfried Fried Chicken', 1200.00)">ORDER NOW</button>
+            </div>
+        </div>  
+    </div>
+    <div id="content8" style="display: none;" class="order-box">
+        <div class="h1-header"><h1>SPECIAL</h1></div>
+        <div class="donut-containers">
+            <div class="promo" id="product24">
+                <img src="special1.webp" alt="1stpromo" class="image-container">
+                <p>Corn Muffin</p>
+                <p style="color:red">Php 75.00</p>
+                <button class="btn-container" onclick="addToCart('Corn Muffin', 75.00)">ORDER NOW</button>
+            </div>
+            <div class="promo" id="product25">
+                <img src="special2.webp" alt="2ndpromo" class="image-container">
+                <p>Classic Roasted Chicken</p>
+                <P style="color: red">Php 290.00</P>
+                <button class="btn-container" onclick="addToCart('Classic Roasted Chicken', 290.00)">ORDER NOW</button>
+            </div>
+            <div class="promo" id="product26">
+                <img src="special3.webp" alt="3rdpromo" class="image-container"><br>
+                <p>Honey Bourbon Ribs</p>
+                <p style="color: red">Php 400.00</p>
+                <button class="btn-container" onclick="addToCart('Honey Bourbon Ribs', 400.00)">ORDER NOW</button>
+            </div>
+        </div> 
+    </div>
+    
+</body>
+</html>
